@@ -76,20 +76,6 @@ function edit_post($file_name){
     return $file;
 }
 
-
-
-/*
-function get_current_date(){
-    date_default_timezone_set("Europe/Madrid");
-    return date("h:i:sa");
-}*/
-
-/*function get_file_date($file_name){
-    $arr = explode("_",$file_name);
-    return $arr[count($arr)];
-}*/
-
-
 function code($title){
     return str_replace(' ', '_', $title);
 }
@@ -104,9 +90,4 @@ function decode($file_name){
     
     return $str;
 }
-/*
-function decode($title_coded){
-    $arr = array_splice("_",$title_coded);
-    return implode(" ",$arr);
-}*/
-?>
+
