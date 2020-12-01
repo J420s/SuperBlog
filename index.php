@@ -14,18 +14,20 @@
   <body>
     <!--VER,NUEVO,GUARDAR,EDITAR,SAVES-->
     <div class="container-fluid"> 
-
-        <?php require_once "components/navbar.php"?>
-        <a href="nuevo.php">Nuevo</a>
-        <div class="row">
-          <div class="col-md-8">
-            <?php echo write_files_list();?>
-            <?php echo get_recent();?>
-          </div>
-          <div class="col-md-4">
-          <?php require_once "components/loginForm.php" ?>
-          </div>
+      <div class="row">
+        <div class="col-md">
+          <?php require_once "components/navbar.php"?>
         </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          
+          <?php echo write_files_list();?>
+          <?php echo get_recent();?>
+          
+        </div>
+      </div>
+        
         
 
         
