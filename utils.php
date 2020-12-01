@@ -87,7 +87,6 @@ function decode($file_name){
         $str .= $key;
         $str .= " ";
     }
-    
     return $str;
 }
 
