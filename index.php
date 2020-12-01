@@ -5,7 +5,17 @@
 <html lang="en">
   
   <head>
-    <?php require_once "components/head.php" ?>
+    <title>BlingBlog | Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" crossorigin="anonymous">
+
+    <!---------** My CSS **--------->
+    <link rel="stylesheet" href="css/mystyle.css">
+
   </head>
 
   <body>
