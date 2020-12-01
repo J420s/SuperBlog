@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Blog</title>
+    <title>BlingBlog | Home</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,10 +13,10 @@
   </head>
   <body>
     <!--VER,NUEVO,GUARDAR,EDITAR,SAVES-->
-    <div class="container"> 
-        <h1>Sitio fácil- Home</h1>
+    <div class="container-fluid"> 
+
+        <?php require_once "components/navbar.php"?>
         <a href="nuevo.php">Nuevo</a>
-        
         <div class="row">
           <div class="col-md-8">
             <?php echo write_files_list();?>
