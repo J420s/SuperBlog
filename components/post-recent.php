@@ -1,16 +1,4 @@
-<?php
-    $dir = './posts/';
-    $shell = `ls -t posts/`;
 
-    if($shell){
-        $r_list = explode("\n",$shell);
-
-        $file1 = file_get_contents($dir.$r_list[0]);
-        $text1 = substr($file1,0,100).'...';
-        $file2 = file_get_contents($dir.$r_list[1]);
-        $text2 = substr($file2,0,100).'...';
-
-        ?>
         <!-----------------** Post Resumen **------------------->
         <div class="row">
             <div class="col-md">
@@ -52,7 +40,3 @@
             </div>
         </div>
         <!-----------------** /Post Resumen **------------------->
-        <?php
-        
-    }
-?>

@@ -1,9 +1,4 @@
-<?php
-    $dir = './posts/';
-    if(is_dir($dir)&&$handler = opendir($dir)){
-        while (false !== ($file = readdir($handler))) {
-            if($file !== ".." && $file !== "."){
-                ?>
+
                 <!-----------------** Post Default **------------------->
                 <div class="row mt-1">
                     <div class="col-md">
@@ -23,7 +18,7 @@
                                             <form class="form-inline" >
                                                 <div class="form-group">
                                                     <a class="btn btn-sm btn-primary my-1" href="editar.php?nombre=<?= $file?>">Editar</a>
-                                                    <a class="btn btn-sm btn-danger ml-1 mr-1 my-1" href="editar.php?nombre=<?= $file?>">Borrar</a>
+                                                    <a class="btn btn-sm btn-danger ml-1 mr-1 my-1" href="borrar.php?nombre=<?= $file?>">Borrar</a>
                                                 </div>
                                             </form>
                                         </div>
@@ -34,8 +29,4 @@
                     </div>
                 </div>
                 <!-----------------** /Post Default **------------------->
-                <?php 
-            }
-        }
-    }
-?>
+               
