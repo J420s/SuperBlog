@@ -19,7 +19,7 @@
                             </li>
                         </ul>
                         <a class="btn btn-outline-primary mr-2" href="nuevo.php">New Post</a>
-                        <?= if_logged_include("<span>User:".$_SESSION['username']."</span>","form-login.php")?>
+                        <?php if_logged_include(["components/logged.php"],"components/form-login.php");?>
                     </div>
                 </nav>
             </div>

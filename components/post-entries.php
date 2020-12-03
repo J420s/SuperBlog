@@ -17,8 +17,8 @@
                                         <div class="col-md-4">
                                             <form class="form-inline" >
                                                 <div class="form-group">
-                                                    <a class="btn btn-sm btn-primary my-1" href="editar.php?nombre=<?= $file?>">Editar</a>
-                                                    <a class="btn btn-sm btn-danger ml-1 mr-1 my-1" href="borrar.php?nombre=<?= $file?>">Borrar</a>
+                                                    <?php include "button-editar.php"?>
+                                                    <?php include "button-borrar.php"?>
                                                 </div>
                                             </form>
                                         </div>

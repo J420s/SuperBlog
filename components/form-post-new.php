@@ -1,4 +1,4 @@
-<form action="guardar.php" method="post">
+<form action="tools/guardar.php" method="post">
     <div class="form-group">
         <label for="titulo">Título</label>
         <input type="text" class="form-control" id="title" name="title">

@@ -1,12 +1,8 @@
 <?php
 
-require "utils.php";
+require "tools/utils.php";
+get_frame('home');   
 
-require_once "html/head.php";
-
-include "components/frame-index.php";
-
-require_once "html/foot.php";
 
         
   

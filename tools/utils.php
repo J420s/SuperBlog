@@ -28,7 +28,7 @@ function get_post_entries(){
 }
 
 function save_post($title,$description){
-    $path = './posts/'.$title;
+    $path = '../posts/'.$title;
     file_put_contents($path,$description);
 }
    
@@ -41,7 +41,7 @@ function show_post($file_name){
 }
 
 function delete_post($file_name){
-    $path= './posts/'.$file_name;
+    $path= '../posts/'.$file_name;
     unlink($path);
 }
 
@@ -65,6 +65,17 @@ function decode($file_name){
     return $str;
 }
 
-function if_logged_include($component,$default){
-    include isset($_SESSION) && $_SESSION['auth'] ? $component : $default;
+function if_logged_include($components,$default){
+    session_start();
+    if(isset($_SESSION['auth']) && $_SESSION['auth']){
+        foreach($components as $comp){
+            include $comp;
+        }
+    }else{
+        include $default;
+    }
+}
+
+function get_frame($page){
+    require "frame.php";
 }

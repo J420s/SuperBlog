@@ -1,4 +1,4 @@
-<form action="login.php" method="POST" class="form-inline my-2 my-lg-0">
+<form action="tools/login.php" method="POST" class="form-inline my-2 my-lg-0">
     <div class="col pl-0">
         <div class="input-group">
             <input type="username" class="form-control" name="username" placeholder="Username">
