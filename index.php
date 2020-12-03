@@ -19,25 +19,20 @@
   </head>
 
   <body>
-    <!--VER,NUEVO,GUARDAR,EDITAR,SAVES-->
-    <div class="container-fluid"> 
+  <div class="container-fluid"> 
       <div class="row">
         <div class="col-md">
           <?php require_once "components/navbar.php"?>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
+      <div class="row justify-content-center" style="height:700px;">
+        <div class="col-md-8 align-self-center">
           
-          <?php echo write_files_list();?>
-          <?php echo get_recent();?>
-          
+          <?php include_once "components/post-recent.php";?>
+          <?php include_once "components/post-entries.php";?>
+
         </div>
       </div>
-        
-        
-
-        
     </div>
 
     <!-- Optional JavaScript -->
