@@ -15,9 +15,7 @@
                         </div>
                         <div class="col-md-4">
                             <form class="form-inline">
-                                <div class="form-group">
-                                    <?php include "button-editar.php" ?>
-                                    <?php include "button-borrar.php" ?>    
+                                <div class="form-group">  
                                 </div>
                             </form>
                         </div>

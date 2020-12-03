@@ -17,11 +17,16 @@ function get_post_recent(){
 }
 
 function get_post_entries(){
+    session_start();
     $dir = './posts/';
     if(is_dir($dir)&&$handler = opendir($dir)){
         while (false !== ($file = readdir($handler))) {
             if($file !== ".." && $file !== "."){
-                include "components/post-entries.php";
+                if(isset($_SESSION['auth']) && $_SESSION['auth']){
+                    include "components/post-entries.php";
+                }else{
+                    include "components/post-entries-default.php";
+                }
             }
         }
     }
@@ -72,7 +77,7 @@ function if_logged_include($components,$default){
             include $comp;
         }
     }else{
-        include $default;
+        if(isset($default))include $default;
     }
 }
 
