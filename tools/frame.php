@@ -27,6 +27,10 @@
 
         <?php switch($page){
             case 'home':
+                if(!$_SESSION['auth'] && !$_SESSION['error']){
+                    $_SESSION['error'] = "You are not logged in!";
+                }
+                get_messages();
                 get_post_recent();      //utils.php
                 get_post_entries();     //utils.php
             break;

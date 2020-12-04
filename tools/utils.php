@@ -84,3 +84,16 @@ function if_logged_include($components,$default){
 function get_frame($page){
     require "frame.php";
 }
+
+function get_messages(){
+    if(isset($_SESSION['info'])){
+        require_once "components/alert-info.php";
+        unset($_SESSION['info']);
+    }if (isset($_SESSION['error'])){
+        require_once "components/alert-error.php";
+        unset($_SESSION['error']);
+    }
+}
+function write_Error_Message(){}
+
+function write_Info_Message(){}

@@ -5,11 +5,13 @@ if(isset($_POST['username'])){
         session_start();
         $_SESSION['auth'] = true;
         $_SESSION['username'] = $_POST['username'];
+        $_SESSION['info'] = "Logged succesfully!";
         header("Location: ../index.php");
     }
-    else{
-        $_SESSION = array();
-        session_destroy();
+    else{   
+        session_start();
+        $_SESSION['error'] = "Wrong credentials!";
+        $_SESSION['auth'] = false;
         header("Location: ../index.php");
     }
 }
