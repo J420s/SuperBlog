@@ -23,7 +23,7 @@
     <?php include "components/navbar.php"?>
 
     <div class="row justify-content-center" style="height:700px;">
-        <div class="col-md-8 align-self-center">
+        <div class="col-md-8 align-self-center scrollable mt-5">
 
         <?php switch($page){
             case 'home':

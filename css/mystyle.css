@@ -10,3 +10,8 @@
 .h-7{
     height: 700px;
 }
+
+.scrollable{
+    height: 700px;
+    overflow-y: scroll;
+}
