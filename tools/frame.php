@@ -18,43 +18,19 @@
 </head>
 <body>
 
-    <div class="container-fluid">
+    <div class="container">
 
-    <?php include "components/navbar.php"?>
+        <?php include "components/navbar.php"?>
+        <?php include "components/scroller.php"?>
 
-    <div class="row justify-content-center" style="height:700px;">
-        <div class="col-md-8 align-self-center scrollable mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md align-self-center mt-1">
 
-        <?php switch($page){
-            case 'home':
-                if(!$_SESSION['auth'] && !$_SESSION['error']){
-                    $_SESSION['error'] = "You are not logged in! <a href='#'><strong></strong></a>";
-                }
-                get_messages();
-                get_post_recent();      //utils.php
-                get_post_entries();     //utils.php
-            break;
+            <?php get_comps($page)?>
 
-            case 'ver':
-                ?>
-                    <p><?= show_post($_GET['nombre'])?></p>
-                    <a href="index.php">Volver<a>
-                <?php
-            break;
-
-            case 'editar':
-                include "components/form-post-edit.php";
-            break;
-
-            case 'nuevo':
-                include "components/form-post-new.php";
-            break;
-        }?>
-
+            </div>
         </div>
     </div>
-    </div>
-
 
       <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

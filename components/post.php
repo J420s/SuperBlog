@@ -1,0 +1,1 @@
+<p><?= show_post($_GET['nombre'])?></p>

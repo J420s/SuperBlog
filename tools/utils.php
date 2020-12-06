@@ -85,15 +85,49 @@ function get_frame($page){
     require "frame.php";
 }
 
+function get_comps($page){
+    switch($page){
+        case 'home':
+            include "components/jumbotron.php";
+            include "components/double-entry.php";
+        break;
+        case 'posts list':
+            if(!isset($_SESSION['auth']) && !isset($_SESSION['error'])){
+                $_SESSION['warning'] = "You are not logged in! <a href='#'>Sing up</a>";
+            }
+            get_messages();
+            get_post_recent();      //utils.php
+            get_post_entries();     //utils.php
+        break;
+
+        case 'ver':
+            include "components/post.php";
+            include "components/button-volver.php";
+        break;
+
+        case 'editar':
+            include "components/form-post-edit.php";
+        break;
+
+        case 'nuevo':
+            include "components/form-post-new.php";
+        break;
+    }
+}
+
 function get_messages(){
     if(isset($_SESSION['info'])){
         require_once "components/alert-info.php";
         unset($_SESSION['info']);
-    }if (isset($_SESSION['error'])){
+    }
+    if (isset($_SESSION['error'])){
         require_once "components/alert-error.php";
         unset($_SESSION['error']);
     }
+    if (isset($_SESSION['warning'])){
+        require_once "components/alert-warning.php";
+        unset($_SESSION['warning']);
+    }
 }
-function write_Error_Message(){}
 
-function write_Info_Message(){}
+

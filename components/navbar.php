@@ -9,14 +9,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Posts <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="list.php">Posts <span class="sr-only">(current)</span></a>
                             </li>
+                            <!----
                             <li class="nav-item">
                                 <a class="nav-link" href="#">#</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">#</a>
                             </li>
+                            --->
                         </ul>
                         <?php 
                          if_logged_include(
