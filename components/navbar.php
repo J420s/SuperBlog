@@ -21,12 +21,14 @@
                             --->
                         </ul>
                         <?php 
-                         if_logged_include(
-                            ["components/button-new.php",
-                            "components/button-user.php", 
-                            "components/button-logout.php"],
-                            "components/form-login.php"     // Default
-                            );
+                        if(isAllowed()){
+                            require_once "components/button-new.php";
+                            require_once "components/button-user.php";
+                            require_once "components/button-logout.php";
+                        }
+                        else{
+                            require_once "components/form-login.php";
+                        }
                         ?>
                     </div>
                 </nav>

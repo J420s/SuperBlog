@@ -10,7 +10,7 @@ if(isset($_POST['username'])){
     }
     else{   
         session_start();
-        $_SESSION['error'] = "Wrong credentials!";
+        $_SESSION['error'] = "Wrong username or password!";
         $_SESSION['auth'] = false;
         header("Location: ../index.php");
     }

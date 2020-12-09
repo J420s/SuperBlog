@@ -1,4 +1,12 @@
+
 <?php
 
 require "tools/utils.php";
-get_frame('nuevo');
+
+if(isAllowed()){
+    get_frame('nuevo');
+}
+else{
+    header("Location: ../index.php");
+}
+

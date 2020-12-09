@@ -1,4 +1,6 @@
 <?php
+require_once "security.php";
+
 function get_posts_last()
 {
     $dir = './posts/';
@@ -32,7 +34,8 @@ function get_posts_sorted_by_date($dir)
 
 function get_post_entries()
 {
-    session_start();
+    
+    
     $dir = './posts/';
     if (is_dir($dir) && $handler = opendir($dir)) {
         while (false !== ($file = readdir($handler))) {
@@ -91,18 +94,6 @@ function decode($file_name)
     return $str;
 }
 
-function if_logged_include($components, $default)
-{
-    session_start();
-    if (isset($_SESSION['auth']) && $_SESSION['auth']) {
-        foreach ($components as $comp) {
-            include $comp;
-        }
-    } else {
-        if (isset($default)) include $default;
-    }
-}
-
 function get_frame($page)
 {
     require "frame.php";
@@ -112,12 +103,12 @@ function get_comps($page)
 {
     switch ($page) {
         case 'home':
+            loginAlert();
+            get_messages();
             get_posts_last();
             break;
         case 'posts list':
-            if (!isset($_SESSION['auth']) && !isset($_SESSION['error'])) {
-                $_SESSION['warning'] = "You are not logged in! <a href='#'>Sing up</a>";
-            }
+            loginAlert();
             get_messages();
             get_post_entries();     //utils.php
             break;
@@ -152,3 +143,10 @@ function get_messages()
         unset($_SESSION['warning']);
     }
 }
+
+function loginAlert(){
+    if (!isset($_SESSION['auth']) && !isset($_SESSION['error'])) {
+        $_SESSION['warning'] = "You are not logged in! <a href='#'>Sing up</a>";
+    }
+}
+

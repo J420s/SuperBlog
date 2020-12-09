@@ -1,4 +1,11 @@
 <?php
 
-require "tools/utils.php";
-get_frame('editar');;
+
+require_once "tools/utils.php";
+if(isAllowed()){
+    get_frame('editar');
+}
+else{
+    header("Location: ../index.php");
+}
+
