@@ -150,3 +150,8 @@ function loginAlert(){
     }
 }
 
+function savePage($page){
+    if(!isset($_SESSION)) session_start();
+    $_SESSION['history'][time()] = $page;
+}
+

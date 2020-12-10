@@ -2,6 +2,7 @@
 <?php
 
 require "tools/utils.php";
+savePage('nuevo.php');
 
 if(isAllowed()){
     get_frame('nuevo');
